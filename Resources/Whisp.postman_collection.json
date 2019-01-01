@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "176b5db3-efea-48ad-b71d-a93574ee3847",
+		"name": "Whisp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterVehicle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-API-Key",
+						"value": "{{anno-api-key}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"UserId\" : 1,\n\t\"RegistrationNumber\" : \"DJS2345\",\n\t\"Make\" : \"Mazda\",\n\t\"Model\" : \"CX-5\",\n\t\"Year\" : 2018\n}\n"
+				},
+				"url": {
+					"raw": "{{whisp-url}}/api/vehicle/register",
+					"host": [
+						"{{whisp-url}}"
+					],
+					"path": [
+						"api",
+						"vehicle",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-Key",
+								"value": "{{anno-api-key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ReferenceId\" : \"C1700002\"\n}"
+						},
+						"url": {
+							"raw": "{{anno-url}}/customers/create",
+							"host": [
+								"{{anno-url}}"
+							],
+							"path": [
+								"customers",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": ""
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": ""
+						},
+						{
+							"key": "Content-Length",
+							"value": "113",
+							"name": "Content-Length",
+							"description": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": ""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Feb 2018 03:50:13 GMT",
+							"name": "Date",
+							"description": ""
+						},
+						{
+							"key": "Expires",
+							"value": "-1",
+							"name": "Expires",
+							"description": ""
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": ""
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0",
+							"name": "Server",
+							"description": ""
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319",
+							"name": "X-AspNet-Version",
+							"description": ""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET",
+							"name": "X-Powered-By",
+							"description": ""
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?QzpcVXNlcnNcSmVmZnJleSBMZXdpc1xEZXNrdG9wXE5FT1xBbm5vXEFubm9BUElcQW5ub0FQSVxjdXN0b21lcnNcY3JlYXRl?=",
+							"name": "X-SourceFiles",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\"Code\":\"1\",\"Message\":\"Success\",\"Data\":{\"WalletAddress\":\"6fd95b17dc884d8ea71c5daf5bb93938\",\"WalletBalance\":1000}}"
+				}
+			]
+		},
+		{
+			"name": "GetVehicle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{whisp-url}}/api/vehicle/1",
+					"host": [
+						"{{whisp-url}}"
+					],
+					"path": [
+						"api",
+						"vehicle",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetVehiclesByOwner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{whisp-url}}/api/vehicle-by-user/1",
+					"host": [
+						"{{whisp-url}}"
+					],
+					"path": [
+						"api",
+						"vehicle-by-user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
